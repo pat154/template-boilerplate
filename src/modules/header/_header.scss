@@ -1,0 +1,320 @@
+/******************************************************************
+
+Site Name: RBG Hollows
+Author: Patrick Shelley
+
+Stylesheet: Global Header Stylesheet
+
+******************************************************************/
+
+// Point at which we show the desktop navigation
+$desktop: "(min-width: 920px)";
+
+.globalHeader{
+		background: #e9e7cd;
+
+	&-logoLink{
+		width: 92px;
+		height: auto;
+		display: inline-block;
+
+		@media #{$desktop}{
+			width: 10.6%;
+			float: left;
+		}
+	}
+
+	&-logo {
+		display: block;
+		width: 100%;
+		@media #{$desktop}{
+			width: 110px;
+		}
+	}
+
+	&-wrapper {
+		padding: 15px 30px 15px 18px;
+		max-width: 1110px;
+		margin: 0 auto;
+	}
+
+	&-menuToggle {
+		@include rem(2);
+		float: right;
+		position: relative;
+		top: 36px;
+		z-index: 1;
+			@media #{$desktop}{
+				display: none;
+			}
+	}
+
+	&-navigation {
+		position: absolute;
+		top: 0;
+		right: 100%;
+		z-index: 100;
+		background: $bgGreen;
+		width: 100%;
+		padding-top: 55px;
+		height: 100vh;
+		overflow: scroll;
+		@include transition(right 0.3s ease-in-out)
+
+		&_open {
+			right: 0;
+		}
+
+		@media #{$desktop}{
+			position: static;
+			max-height: none;
+			height: auto;
+			width: 87.4%;
+			display: inline-block;
+			overflow: visible;
+			margin: -1px 0 14px 2%;
+			background: none;
+		}
+	}
+
+	&-navigationList {
+		border-top: 2px solid #e6e6d2;
+
+		@media #{$desktop}{
+			display: inline-block;
+			border: none;
+		}
+	}
+
+	&-navigationItem {
+		border-bottom: 2px solid #e6e6d2;
+
+		@media #{$desktop}{
+			@include rem(2.4);
+			display: inline-block;
+			border-bottom: none;
+
+			&_login {
+				display: none;
+			}
+		}
+	}
+	&-navigationLink {
+		font-weight: 200;
+		padding: 10px 30px;
+		display: block;
+
+		@media #{$desktop}{
+			color: #333;
+			padding: 10px;
+
+			&:hover {
+				color: $greyLinkHover;
+			}
+		}
+	}
+
+	&-subNavExpand{
+		float: right;
+
+		@media #{$desktop}{
+			display: none;
+		}
+	}
+
+	&-subNavWrapper{
+		max-height: 0;
+		overflow: hidden;
+		@include transition(max-height 0.8s ease)
+		
+		@media #{$desktop}{
+			position: absolute;
+			z-index: 20;
+			left: 0;
+			margin-top: -2px;
+			@include transition(none)	
+		}
+	}
+	&-subNav{
+
+		@media #{$desktop}{
+			background: $bgGreen;
+			width: 211px;
+			border: 2px solid $darkGreen;
+			padding: 15px 10px;
+
+			.globalHeader-navigationItem{
+				@include rem(1.6);
+			}
+		}
+	}
+
+	&-subNavParent{
+		position: relative;
+
+		@media #{$desktop}{
+			padding: 2px 2px 0 2px;
+
+			a{
+				position: relative;
+				z-index: 25;
+			}
+		}
+	}
+
+	&-subNavParent:hover{			
+		.globalHeader-subNavWrapper{
+			max-height: 300px;
+			
+			@media #{$desktop}{
+				left: -2px;
+			}
+		}
+		.globalHeader-subNavExpand:before{
+			content: '\e712'
+		}
+
+		@media #{$desktop}{
+			background: $bgGreen;
+			padding: 0;
+			border: 2px solid $darkGreen;
+			border-bottom: 0;
+
+			a {
+				background: $bgGreen;
+			}
+		}
+	}
+
+	&-closeMobileNav{
+		color: $darkGreen;
+		@include rem(3);
+		position: absolute;
+		top: 10px;
+		right: 5px;
+		@include transition(color 0.3s ease);
+
+		@media #{$desktop}{
+			display: none
+		}
+
+		&:hover {
+			color: #58601b;
+		}
+	}
+
+	&-report {
+		padding: 28px;
+
+		@media #{$desktop}{
+			padding: 0;
+			display: inline-block;
+			margin-right: 20px;
+		}
+	}
+
+	&-reportBtn {
+		width: 100%;
+		padding: 11px;
+
+		@media #{$desktop}{
+			width: auto;
+		}
+	}
+
+	&-actions {
+		
+		@media #{$desktop}{
+			float: right;	
+		}
+	}
+
+	&-login {
+		display: none;
+
+		@media #{$desktop}{
+			display: inline-block;
+			padding: 0;
+			position: relative;
+			border: none;
+		}
+		&:hover{
+			@media #{$desktop}{
+				background-color: #f4f3e6;
+
+				.globalHeader-userOptionsWrapper{
+					max-height: 200px;
+				}
+
+				.icon-down-open:before {
+					content: '\E80A'
+				}
+			}
+		}
+	}
+
+	&-loginLink {
+		padding: 9px 16px;
+		display: block;
+		color: #000;
+		border: 2px solid $darkGreen;
+		min-width: 180px;
+		text-align: left;
+
+		&:before{
+			color: $darkGreen;
+		}
+
+		&:hover {
+
+			.icon-down-open{
+				color: #000;
+			}
+		}
+
+		span {
+			float: right;
+		}
+	}
+
+	&-userOptionsWrapper {
+		max-height: 0;
+		overflow: hidden;
+		@include transition(max-height 0.3s ease-in);
+		position: absolute;
+		z-index: 25;
+		width: 100%;
+		margin-top: -2px;
+	}
+
+	&-userOptions {
+		text-align: left;
+		background: $bgGreen;
+		border: 2px solid $darkGreen;
+		border-top: none;
+		padding: 8px 0 15px;
+
+		a{
+			color: #000;
+		}
+	}
+
+	&-userLink{
+		padding: 5px 20px;
+
+		a:hover {
+			color: $greyLinkHover;
+		}
+	}
+
+	.globalHeader-subNav {
+		.globalHeader-navigationItem {
+			border-bottom: 1px solid #f0efe0;
+		}	
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+}

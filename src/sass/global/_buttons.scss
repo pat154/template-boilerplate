@@ -1,0 +1,41 @@
+.btn {
+	background: #CCC;
+	padding: 18px;
+	text-align: center;
+	color: #FFF;
+	text-decoration: none;
+	display: inline-block;
+	font-weight: 300;
+	border: none;
+	@include transition(background 0.3s ease);
+
+	&:hover {
+		background: #EEE;
+		color: #FFF;
+	}
+
+	&_fullWidth {
+		width: 100%;
+
+		@media (min-width: 768px){
+			width: auto;
+			padding: 17px 50px;
+		}
+	}
+
+	&_secondary {
+		background: transparent;
+		border: 2px solid #666;
+		padding: 9px 16px;
+
+		&:hover {
+			background: transparent
+		}
+	}
+}
+
+input.btn {
+	font-family: $fontFamily;
+	padding-top: 17px;
+	padding-bottom: 17px;
+}

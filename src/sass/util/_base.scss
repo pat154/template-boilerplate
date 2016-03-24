@@ -1,0 +1,81 @@
+/******************************************************************
+
+Site Name: RBG Hollows
+Author: Patrick Shelley
+
+Stylesheet: Base Stylesheet
+
+The purpose of this document is to house all the site wide styles.
+These items are used across all view states, mobile, tablet, and 
+tablet.
+
+******************************************************************/
+
+/*********************
+ GENERAL STYLES
+*********************/
+
+html {
+	font-size: 62.5%
+}
+
+body {
+	@include rem(1.6);
+	line-height: 1.4em;
+	color: $text;
+	background: #FFF;
+	font-family: $fontFamily;
+	position: relative;
+}
+
+.page-wrapper{
+	overflow: hidden;
+	position: relative;
+}
+
+p {
+	margin: 0 0 15px;
+	font-size: 1em;
+}
+
+input::-webkit-input-placeholder{  
+	font-weight: 100;
+}
+input:-moz-placeholder{  
+	font-weight: 100;
+}
+input::-moz-placeholder{  
+	font-weight: 100;
+}
+input:-ms-input-placeholder {  
+	font-weight: 100;
+}
+
+a {
+	text-decoration: none;
+
+	&:hover{
+		color: #939a5c;
+	}
+}
+
+/* Headings */
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+	font-weight: 300;
+	line-height:  1;
+	margin-top: 0;
+}
+
+h1, .h1 {
+	@include rem(3.6);
+	text-align: center;
+}
+
+h2, .h2 {
+	@include rem(2.7);
+}
+
+h3, .h3 {
+	@include rem(2.6);
+}
