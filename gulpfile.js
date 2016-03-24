@@ -4,6 +4,7 @@ var fileinclude = require('gulp-file-include');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var babel = require('gulp-babel');
+var connect = require('gulp-connect');
 
 gulp.task('sass', function () {
   gulp.src('./src/sass/*.scss')
@@ -11,7 +12,8 @@ gulp.task('sass', function () {
       sass({
         outputStyle: 'compressed'
       }).on('error', sass.logError))
-    .pipe(gulp.dest('./dist/css'));
+    .pipe(gulp.dest('./dist/css'))
+    .pipe(connect.reload());
 });
 
 gulp.task('copy-images', function () {
@@ -30,7 +32,8 @@ gulp.task('fileinclude', function() {
       prefix: '@@',
       basepath: '@file'
     }))
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('./dist'))
+    .pipe(connect.reload());
 });
 
 gulp.task('compileJS', function(){
@@ -49,12 +52,17 @@ gulp.task('compileJS', function(){
     .pipe(babel()) 
     .pipe(concat('app.js'))
     //.pipe(uglify()) 
-    .pipe(gulp.dest("./dist/js"));
-})
+    .pipe(gulp.dest("./dist/js"))
+    .pipe(connect.reload());
+});
 
 gulp.task('watch', function () {
   	gulp.watch('./src/**/*.scss', ['sass']);
-    gulp.watch(['./src/**/*.html', '!./src/edm.html'], ['fileinclude']);
+    gulp.watch(['./src/**/*.html'], ['fileinclude']);
   	gulp.watch('./src/**/*.js', ['compileJS']);
   	gulp.watch(['./src/img/**/*.png','./src/img/**/*.jpg','./src/img/**/*.gif'], ['copy-images']);
+    connect.server({
+      root: 'dist',
+      livereload: true
+    });
 });
