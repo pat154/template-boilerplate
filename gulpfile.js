@@ -42,7 +42,7 @@ gulp.task('compileJS', function(){
     "./src/js/lib/*.js"
   ])
     .pipe(concat('concat-lib.js'))
-    //.pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest("./dist/js"));
     gulp.src([ 
       "./src/js/**/*.js",
@@ -51,12 +51,12 @@ gulp.task('compileJS', function(){
     ])
     .pipe(babel()) 
     .pipe(concat('app.js'))
-    //.pipe(uglify()) 
+    .pipe(uglify()) 
     .pipe(gulp.dest("./dist/js"))
     .pipe(connect.reload());
 });
 
-gulp.task('watch', function () {
+gulp.task('watch', function () {ex
   	gulp.watch('./src/**/*.scss', ['sass']);
     gulp.watch(['./src/**/*.html'], ['fileinclude']);
   	gulp.watch('./src/**/*.js', ['compileJS']);

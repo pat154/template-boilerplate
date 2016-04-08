@@ -1,3 +1,9 @@
+/********
+    This file bootstraps the javascript components for any modules
+    that have been built within the app. To bootstrap any logic that
+    should be on all pages, define the selector as 'body'.
+********/
+
 "use strict";
 
 "use-strict";
@@ -44,8 +50,9 @@ window.APP = typeof window.APP == 'undefined' ? {} : window.APP;
 
                     // If there are multiple instances of an object, loop over them and initilise each one
                     if ($el.length > 1) {
+                        APP[component.moduleName] = [];
                         for (var x = 0; x < $el.length; x++) {
-                            APP[component.moduleName] = new _module2($el.eq(x), component.options);
+                            APP[component.moduleName][x] = new _module2($el.eq(x), component.options);
                             APP[component.moduleName].init();
                         }
                     } else {
@@ -72,22 +79,6 @@ window.APP = typeof window.APP == 'undefined' ? {} : window.APP;
         init(components);
     });
 })(jQuery);
-
-//Google Maps
-function initMap() {
-    var MyLatLng = { lat: -33.90772475434785, lng: 151.22056427001954 };
-    var marker;
-    var mapDiv = document.getElementById('map');
-    var map = new google.maps.Map(mapDiv, {
-        center: MyLatLng,
-        zoom: 12
-    });
-
-    map.addListener('center_changed', function () {
-        $('#txtGeoLat').val(map.getCenter().lat());
-        $('#txtGeoLong').val(map.getCenter().lng());
-    });
-};
 /*****************
 	Generic module class
 *****************/
@@ -143,7 +134,6 @@ var Navigation = (function (_Module) {
 	}, {
 		key: 'init',
 		value: function init() {
-			// Sub navigation expanded
 			this.mobileNav();
 		}
 	}]);
