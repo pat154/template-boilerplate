@@ -9,5 +9,5 @@ The purpose of this project is to a provide file structure that is useful for de
 	- [Gulp Concat](https://www.npmjs.com/package/gulp-concat) - File concatenation
 	- [Gulp Connect](https://www.npmjs.com/package/gulp-connect) - Simple webserver for serving up templates. (with LiveReload)
 	- [Gulp File Include](https://www.npmjs.com/package/gulp-file-include) - Include files within HTML
-    - [SASS](http://sass-lang.com/)
-    - [Gulp Uglify](https://www.npmjs.com/package/gulp-uglify)
+    - [SASS](http://sass-lang.com/) - Stylesheet preprocessor
+    - [Gulp Uglify](https://www.npmjs.com/package/gulp-uglify) - Javascript minification
