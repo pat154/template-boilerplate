@@ -1,4 +1,10 @@
-﻿"use-strict";
+/********
+    This file bootstraps the javascript components for any modules
+    that have been built within the app. To bootstrap any logic that
+    should be on all pages, define the selector as 'body'.
+********/
+
+"use-strict";
 
 // Handle console being undefined in IE when dev tools aren't open
 if (typeof console == "undefined") {
@@ -38,8 +44,9 @@ window.APP = typeof(window.APP) == 'undefined' ? {} : window.APP;
 
                 // If there are multiple instances of an object, loop over them and initilise each one
                 if( $el.length > 1 ){
+                    APP[component.moduleName] = [];
                     for(let x=0; x<$el.length; x++){
-                        APP[component.moduleName] = new module( $el.eq(x), component.options );
+                        APP[component.moduleName][x] = new module( $el.eq(x), component.options );
                         APP[component.moduleName].init();
                     }
                 }else{
@@ -54,20 +61,3 @@ window.APP = typeof(window.APP) == 'undefined' ? {} : window.APP;
     });
 
 })(jQuery)
-
-//Google Maps
-function initMap() {
-    var MyLatLng = { lat: -33.90772475434785, lng: 151.22056427001954 }
-    var marker;
-    var mapDiv = document.getElementById('map');
-    var map = new google.maps.Map(mapDiv, {
-        center: MyLatLng,
-        zoom: 12
-    });
-    
-    map.addListener('center_changed', function () {
-        $('#txtGeoLat').val(map.getCenter().lat());
-        $('#txtGeoLong').val(map.getCenter().lng());
-    });
-};
-

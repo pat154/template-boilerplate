@@ -7,7 +7,6 @@ class Navigation extends Module{
 	}
 
 	init(){
-		// Sub navigation expanded
 		this.mobileNav();
 	}
 
