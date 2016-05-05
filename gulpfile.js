@@ -56,7 +56,7 @@ gulp.task('compileJS', function(){
     .pipe(connect.reload());
 });
 
-gulp.task('watch', function () {ex
+gulp.task('watch', function () {
   	gulp.watch('./src/**/*.scss', ['sass']);
     gulp.watch(['./src/**/*.html'], ['fileinclude']);
   	gulp.watch('./src/**/*.js', ['compileJS']);
