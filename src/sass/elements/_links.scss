@@ -1,0 +1,10 @@
+a {
+    text-decoration: none;
+    color: $colour-link;
+
+    &:hover,
+    &:focus {
+        color: $colour-link-hover;
+    }
+
+}

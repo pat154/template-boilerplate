@@ -1,0 +1,5 @@
+.sidebar{
+	@include span-columns(4);
+	@include omega();
+	
+}

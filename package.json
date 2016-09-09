@@ -1,14 +1,18 @@
 {
   "name": "Template-boilerplate",
   "version": "1.0.0",
-  "description": "Royal Botanic Garden Hollows as Homes application",
+  "description": "This is a scaffold for building static templates quickly. It contains various tools and libraries to help speed up the development process.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Patrick Shelley",
   "license": "ISC",
+  "repository" : "https://github.com/pat154/template-boilerplate",
   "dependencies": {
+    "bourbon": "^4.2.7",
+    "bourbon-neat": "^1.8.0",
+    "bower": "^1.7.9",
     "gulp": "^3.9.1",
     "gulp-babel": "^5.2.1",
     "gulp-concat": "^2.6.0",

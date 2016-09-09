@@ -1,0 +1,23 @@
+.media {
+    display: table;
+    width: 100%;
+}
+
+    .media__img,
+    .media__body {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    .media__img {
+
+        img {
+            display: block;
+            max-width: none;
+        }
+
+    }
+
+    .media__body {
+        width: 100%;
+    }

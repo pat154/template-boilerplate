@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<title>Pat's Boilerplate</title>
-		<meta name="description" content="RGB Hollows">
+		<meta name="description" content="">
 		<meta name="author" content="Patrick Shelley">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
@@ -21,8 +21,23 @@
 		<![endif]-->
 	</head>
 	<body>
-		@@include('./modules/header/view.html')
+		
+		<div class="container">
+			@@include('./components/header/header.html')
 
-		@@include('./modules/footer/view.html')
+			<article class="main-content">
+				<h2>Main content area</h2>
+			</article>
+
+			<aside class="sidebar">
+				<h2>Sidebar area</h2>
+			</aside>
+
+			@@include('./components/footer/footer.html')
+		</div>
+
+		<script src="js/concat-lib.js"></script>
+        <script src="js/app.js"></script>
+
 	</body>
 </html>

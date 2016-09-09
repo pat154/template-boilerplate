@@ -17,6 +17,8 @@ window.APP = typeof(window.APP) == 'undefined' ? {} : window.APP;
 
 (function($){
 
+    $('html').removeClass('no-js');
+
     // Document ready
     $( () => {
         

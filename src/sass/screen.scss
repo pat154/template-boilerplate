@@ -1,13 +1,23 @@
-// Main Styles File
+// Settings
+	@import "settings/global";
 
-    // Utilities
-    @import "util/variables";
-    @import "util/mixins";
-    @import "util/normalise";
-    @import "util/fonts";
-    @import "util/base";
-    
-    // Global Styles
+// Tools
+    @import "bourbon";
+    @import "neat";
 
-    // Module Styles
- 
+// Generic
+	@import "generic/normalize";
+
+// Elements
+ 	@import "elements/links";
+ 	@import "elements/headings";
+
+// Objects
+	@import "objects/media";
+	@import "objects/container";
+	@import "objects/main-content";
+	@import "objects/sidebar";
+
+// Components
+	@import "../components/header/header";
+	@import "../components/footer/footer";

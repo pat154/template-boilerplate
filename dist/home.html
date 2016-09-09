@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<title>Pat's Boilerplate</title>
-		<meta name="description" content="RGB Hollows">
+		<meta name="description" content="">
 		<meta name="author" content="Patrick Shelley">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!--<meta name="theme-color" content="#6e7822">-->
+		
 		<!-- Control the colour of the chrome address bar on mobile -->
+		<!--<meta name="theme-color" content="#6e7822">-->
 		
 		<link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
@@ -20,12 +21,27 @@
 		<![endif]-->
 	</head>
 	<body>
-		<header>
-	
+		
+		<div class="container">
+			<header class="header">
+	<h1 class="header__title">Template boilerplate</h1>
 </header>
 
-		<footer>
+			<article class="main-content">
+				<h2>Main content area</h2>
+			</article>
 
+			<aside class="sidebar">
+				<h2>Sidebar area</h2>
+			</aside>
+
+			<footer class="footer">
+	Template Boilerplate | 2016
 </footer>
+		</div>
+
+		<script src="js/concat-lib.js"></script>
+        <script src="js/app.js"></script>
+
 	</body>
 </html>

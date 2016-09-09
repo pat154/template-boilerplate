@@ -1,0 +1,20 @@
+{
+  "name": "Template-boilerplate",
+  "description": "This is a scaffold for building static templates quickly. It contains various tools and libraries to help speed up the development process.",
+  "main": "index.js",
+  "authors": [
+    "Patrick Shelley"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/pat154/template-boilerplate",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0"
+  }
+}

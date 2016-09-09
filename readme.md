@@ -4,6 +4,10 @@ The purpose of this project is to a provide file structure that is useful for de
 
 ## Features/tools being used:
 
+- [ITCSS](http://itcss.io/) - Scalable and maintainable css architecture.
+- [Bourbon](http://bourbon.io/) - A simple and lightweight mixin library for Sass.
+- [Bourbon Neat](http://neat.bourbon.io/) - A lightweight semantic grid framework built with Sass.
+- [Bower](http://bower.io/) - A package manager for the web.
 - [Gulp](http://gulpjs.com/). With the following plugins:
 	- [Babel](https://babeljs.io/) - ES6 transpiler
 	- [Gulp Concat](https://www.npmjs.com/package/gulp-concat) - File concatenation

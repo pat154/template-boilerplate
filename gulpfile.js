@@ -5,29 +5,34 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var babel = require('gulp-babel');
 var connect = require('gulp-connect');
+var bourbon = require('bourbon').includePaths;
+var bourbonNeat = require('bourbon-neat').includePaths;
+
+bourbonPaths = bourbon.concat( bourbonNeat );
 
 gulp.task('sass', function () {
-  gulp.src('./src/sass/*.scss')
+  return gulp.src('./src/sass/*.scss')
     .pipe(
       sass({
-        outputStyle: 'compressed'
+        outputStyle: 'compressed',
+        includePaths: bourbonPaths
       }).on('error', sass.logError))
     .pipe(gulp.dest('./dist/css'))
     .pipe(connect.reload());
 });
 
 gulp.task('copy-images', function () {
-  gulp.src(['./src/img/**/*'])
+  return gulp.src(['./src/img/**/*'])
     .pipe(gulp.dest('./dist/img'));
 });
 
 gulp.task('copy-fonts', function () {
-  gulp.src(['./src/fonts/**/*'])
+  return gulp.src(['./src/fonts/**/*'])
     .pipe(gulp.dest('./dist/fonts'));
 });
  
 gulp.task('fileinclude', function() {
-  gulp.src(['./src/*.html'])
+  return gulp.src(['./src/*.html'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
@@ -37,19 +42,17 @@ gulp.task('fileinclude', function() {
 });
 
 gulp.task('compileJS', function(){
-  gulp.src([ 
-    "./src/js/lib/jquery-1.12.0.min.js",
-    "./src/js/lib/*.js"
+  gulp.src([
+    "./bower_components/jquery/dist/jquery.min.js"
   ])
     .pipe(concat('concat-lib.js'))
-    .pipe(uglify())
     .pipe(gulp.dest("./dist/js"));
-    gulp.src([ 
+  
+  return gulp.src([ 
       "./src/js/**/*.js",
-      "./src/modules/**/*.js",
-      "!./src/js/lib/*.js"
-    ])
-    .pipe(babel()) 
+      "./src/modules/**/*.js"
+  ])
+    .pipe(babel())
     .pipe(concat('app.js'))
     .pipe(uglify()) 
     .pipe(gulp.dest("./dist/js"))
