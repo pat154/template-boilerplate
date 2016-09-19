@@ -50,10 +50,10 @@ gulp.task('compileJS', function(){
   
   return gulp.src([ 
       "./src/js/**/*.js",
-      "./src/modules/**/*.js"
+      "./src/components/**/*.js"
   ])
     .pipe(babel())
-    .pipe(concat('app.js'))
+    .pipe(concat('app.min.js'))
     .pipe(uglify()) 
     .pipe(gulp.dest("./dist/js"))
     .pipe(connect.reload());

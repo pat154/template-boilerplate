@@ -2,8 +2,8 @@
 	@import "settings/global";
 
 // Tools
-    @import "bourbon";
-    @import "neat";
+    @import "bourbon"; 	// Node module. Full path is defined in sass config in gulpfile.js as the 'includePaths' parameter.
+    @import "neat"; 	// Node module. Full path is defined in sass config in gulpfile.js as the 'includePaths' parameter.
 
 // Generic
 	@import "generic/normalize";
